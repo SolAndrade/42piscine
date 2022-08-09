@@ -1,1 +1,1 @@
-git log -5 --pretty=format:"%H" --graph
+git log -5 --format=%H
