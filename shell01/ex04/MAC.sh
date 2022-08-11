@@ -1,2 +1,1 @@
-ifconfig -a | grep ether | awk '{print $2}'
-
+ifconfig | grep -w ether | cut -d " " -f 2
