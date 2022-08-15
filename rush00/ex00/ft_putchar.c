@@ -6,15 +6,13 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 10:57:11 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/13 13:48:52 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/14 13:57:57 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-int	ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (0);
 }

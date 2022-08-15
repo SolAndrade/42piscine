@@ -6,36 +6,36 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/11 15:49:44 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/13 13:15:48 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/15 09:29:10 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-void	ft_putchar(char c)
+void	ft_print_comb(void)
 {
-	write(1, &c, 1);
-}
+	int	a;
+	int	b;
+	int	c;
 
-void	ft_print_comb()
-{
-    int n1 = 0;
-    int n2 = 0;
-    int n3 = 0;
-	while(n1<=9){
-        while(n2<=9){
-            while(n3<=9){ 
-                printf(n1 + n2 +q n3);
-                n3++;
-            }
-            n2++;
-        }
-        n1++;
-    }
-    
-}
-int main(){
-    ft_print_comb();
-    return(0);
+	a = '0';
+	while (a <= '7')
+	{
+		b = a + 1;
+		while (b <= '8')
+		{
+			c = b + 1;
+			while (c <= '9')
+			{
+				write (1, &a, 1);
+				write (1, &b, 1);
+				write (1, &c, 1);
+				if (a != '7')
+					write (1, ", ", 2);
+				c++;
+			}
+			b++;
+		}
+		a++;
+	}
 }

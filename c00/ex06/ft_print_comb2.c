@@ -3,56 +3,62 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_comb2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soandrad <soandrad@student.42malaga.com>   +#+  +:+       +#+        */
+/*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/12 12:53:21 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/12 13:42:32 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/15 09:29:52 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <stdio.h>
 #include <unistd.h>
-void    ft_print_comb2(void);
-void    ft_print_comb2(void)
+
+void	ft_print_comb2(void);
+void	ft_putchar(char c);
+void	write_numbers(int i, int d);
+
+void	ft_putchar(char c)
 {
-    int n1, n2, n3, n4;
-    n1 = '0';
-    n2 = '0';
-    n3 = '0';
-    n4 = '1';
-    while (n1 <= '9'){
-        n2 = '0';
-        while (n2 <= '9'){
-            n3 = '0';
-            n4 = n2 + 1;
-            while (n3 <= '9'){
-                while(n4 <= '9'){
-                    if (n1 == '9' && n2 == '9' && n3 == '9' && n4 == '9'){
-                      write(1, &n1, 1);
-                      write(1, "8", 2);
-                      write(1, " ", 2);
-                      write(1, &n3, 1);
-                      write(1, &n4, 1);
-                      write(1, ", ", 2);
-                    }else{
-                    write(1, &n1, 1);
-                    write(1, &n2, 1);
-                    write(1, " ", 2);
-                    write(1, &n3, 1);
-                    write(1, &n4, 1);
-                    write(1, ", ", 2);
-                    }
-                    n4++;
-                }
-                n4 = '0';
-                n3++;
-            }
-            n2++;
-        }
-        n1++;
-    }
+	write(1, &c, 1);
 }
-int main(){
-    ft_print_comb2();
+
+void	ft_print_comb2(void)
+{
+	int	i;
+	int	d;
+
+	i = 0;
+	d = 0;
+	while (i <= 99)
+	{
+		d = i + 1;
+		while (d <= 99)
+		{
+			write_numbers(i, d);
+			d++;
+		}
+		i++;
+	}
+}
+
+void	write_numbers(int i, int d)
+{
+	if (i == 98)
+	{
+		ft_putchar ((i / 10) + '0');
+		ft_putchar ((i % 10) + '0');
+		ft_putchar (' ');
+		ft_putchar ((d / 10) + '0');
+		ft_putchar ((d % 10) + '0');
+	}
+	else
+	{
+		ft_putchar ((i / 10) + '0');
+		ft_putchar ((i % 10) + '0');
+		ft_putchar (' ');
+		ft_putchar ((d / 10) + '0');
+		ft_putchar ((d % 10) + '0');
+		ft_putchar (',');
+		ft_putchar (' ');
+	}
 }

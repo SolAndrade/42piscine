@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/11 13:12:00 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/14 18:05:01 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/13 11:08:17 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/14 13:58:18 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+void	rush(int x, int y);
 
-void	ft_putchar(char c)
+int	main(void)
 {
-	write(1, &c, 1);
-}
-
-void	ft_print_numbers(void)
-{
-	char	nro;
-
-	nro = '0';
-	while (nro <= '9')
-	{
-		ft_putchar(nro);
-		nro++;
-	}
+	rush (5, 5);
 }
