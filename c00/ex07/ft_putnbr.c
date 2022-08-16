@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 16:57:37 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/15 09:30:57 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/15 10:55:55 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,22 @@ void	ft_putchar(char c)
 
 void	ft_putnbr(int nb)
 {
-	if (nb < 0)
-	{
-		ft_putchar('-');
-		nb = -nb;
-	}
-	if (nb >= 10)
+	if (nb == -2147483648)
 	{
 		ft_putnbr(nb / 10);
-		nb = nb % 10;
+		ft_putchar('8');
 	}
-	if (nb < 10)
+	else if (nb < 0)
 	{
-		ft_putchar(nb + 48);
+		ft_putchar('-');
+		ft_putnbr(-nb);
+	}
+	else
+	{
+		if (nb > 9)
+		{
+			ft_putnbr(nb / 10);
+		}
+		ft_putchar(48 + nb % 10);
 	}
 }
