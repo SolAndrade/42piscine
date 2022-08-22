@@ -3,36 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_str_is_printable.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
+/*   By: soandrad <soandrad@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 17:07:31 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/18 17:17:27 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/21 16:56:13 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/21 16:59:17 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
-#include <unistd.h>
-
 int	ft_str_is_printable(char *str);
 
 int	ft_str_is_printable(char *str)
 {
-	int	index;
-	int	found;
+	int	i;
+	int	r;
 
-	found = 1;
-	index = 0;
-	while (str[index] != '\0' && found != 0)
+	r = 1;
+	i = 0;
+	while (str[i])
 	{
-		if (str[index] >= 33 && str[index] <= 127)
+		if (!((str[i] >= 32 && str[i] <= 126)))
 		{
-			found = 1;
+			r = 0;
 		}
-		else
-		{
-			found = 0;
-		}		
-		index++;
+		i++;
 	}
-	return (found);
+	return (r);
 }

@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 17:29:36 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/21 14:41:48 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/20 13:13:41 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/21 20:11:11 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "rush01.c"
 #include <stdio.h>
-#include <string.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	main()
 {
-	unsigned int	index;
+	char *views =   "2 1 4 3 1 2 4 3 2 1 2 4 3 2 2 1";
+	int *p;
+	int i;
+	
+	p = ft_take_integers(views);
+	i = 0;
 
-	index = 0;
-	while (index < n && src[index] != '\0')
-	{
-		dest[index] = src[index];
-		index++;
-	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+	ft_init(p);
+	return (0);
 }
+

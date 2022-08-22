@@ -1,34 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/17 17:29:36 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/21 14:41:48 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/21 12:49:13 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/21 17:41:24 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <unistd.h>
 #include <string.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n);
+int	ft_strcmp(char *s1, char *s2);
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int	ft_strcmp(char *s1, char *s2)
 {
-	unsigned int	index;
-
-	index = 0;
-	while (index < n && src[index] != '\0')
+	while (*s1 != '\0' && (*s1 == *s2))
 	{
-		dest[index] = src[index];
-		index++;
+		s1++;
+		s2++;
 	}
-	while (index < n)
-	{
-		dest[index] = '\0';
-		index++;
-	}
-	return (dest);
+	return (*(unsigned char *)s1 - *(unsigned char *)s2);
 }
+
+// int	main(void)
+// {
+// 	char *str1;
+// 	char *str2;
+
+// 	str1 = "Hello";
+// 	str2 = "Helloo";
+// 	printf("c  : %d\n", strcmp(str1, str2));
+// 	printf("ft : %d\n", ft_strcmp(str1, str2));
+// }
