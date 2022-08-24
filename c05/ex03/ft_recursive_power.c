@@ -1,38 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:49:13 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 15:37:02 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/24 12:33:04 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/24 13:16:57 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2);
+int	ft_recursive_power(int nb, int power);
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_recursive_power(int nb, int power)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
-	{
-		s1++;
-		s2++;
-	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+    if (power > 0)
+		return (nb * ft_recursive_power(nb, (power - 1)));
+	else
+		return (1);
 }
 
-int	main(void)
-{
-	char *str1;
-	char *str2;
-
-	str1 = "Hello";
-	str2 = "Hellot";
-	printf("c  : %d\n", strcmp(str1, str2));
-	printf("ft : %d\n", ft_strcmp(str1, str2));
-}
+// int main()
+// {
+//     printf("%d\n", ft_recursive_power(2, 4));
+// }

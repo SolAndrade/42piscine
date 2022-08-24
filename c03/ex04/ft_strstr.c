@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:42:40 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/22 13:26:24 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:42:13 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_strstr(char *str, char *to_find)
 
 // int main ()
 // {
-//     char str[] = "42 1337 Network 2021 piscine Benguerir Khouribga";
+//     char str[] = "42 1337 Network 2021 scino piscine Benguerir Khouribga";
 // 	char find[] = "piscine";
 // 	printf("%s", ft_strstr(str, find));
 // }

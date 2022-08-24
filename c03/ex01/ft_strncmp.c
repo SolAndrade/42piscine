@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 15:39:34 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/21 17:42:18 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/24 15:50:19 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,28 +18,25 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	unsigned int	index;
+	unsigned int	i;
 
-	index = 0;
-	while (index < n)
+	i = 0;
+	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
 	{
-		while (*s1 != '\0' && (*s1 == *s2))
+		if (s1[i] > s2[i])
 		{
-			s1++;
-			s2++;
+			return (1);
 		}
-		index++;
+		else if (s1[i] < s2[i])
+		{
+			return (-1);
+		}
+		i++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (0);
 }
 
-// int	main(void)
+// int	main()
 // {
-// 	char *str1;
-// 	char *str2;
-
-// 	str1 = "dsa";
-// 	str2 = "ddsa";
-// 	printf("c  : %d\n", strncmp(str1, str2, 3));
-// 	printf("ft : %d\n", ft_strncmp(str1, str2, 3));
+// 	printf("%d", ft_strncmp("Hello", "Hella", 5));
 // }

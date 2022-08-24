@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:49:13 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 15:37:02 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/24 10:55:44 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/24 12:23:37 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2);
+int	ft_iterative_factorial(int nb);
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_iterative_factorial(int nb)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
+	int	i;
+
+	i = nb;
+	if (nb < 0)
+		return (0);
+	while (i > 1)
 	{
-		s1++;
-		s2++;
+		nb = nb * (i - 1);
+		i--;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (nb);
 }
 
-int	main(void)
-{
-	char *str1;
-	char *str2;
-
-	str1 = "Hello";
-	str2 = "Hellot";
-	printf("c  : %d\n", strcmp(str1, str2));
-	printf("ft : %d\n", ft_strcmp(str1, str2));
-}
+// int main()
+// {
+//     printf("%d\n", ft_iterative_factorial(0));
+// }

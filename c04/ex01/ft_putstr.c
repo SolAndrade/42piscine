@@ -1,38 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:49:13 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 15:37:02 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/23 11:39:22 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/23 11:39:49 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2);
+void	ft_putstr(char *str);
 
-int	ft_strcmp(char *s1, char *s2)
+void	ft_putstr(char *str)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
+	char	next_char;
+	int		a;
+
+	a = 0;
+	while (a == 0)
 	{
-		s1++;
-		s2++;
+		next_char = *str;
+		if (next_char == '\0')
+		{
+			break ;
+		}
+		write(1, &next_char, 1);
+		str++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
-
-int	main(void)
-{
-	char *str1;
-	char *str2;
-
-	str1 = "Hello";
-	str2 = "Hellot";
-	printf("c  : %d\n", strcmp(str1, str2));
-	printf("ft : %d\n", ft_strcmp(str1, str2));
 }

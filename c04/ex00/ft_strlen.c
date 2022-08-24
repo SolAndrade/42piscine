@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:49:13 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 15:37:02 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/23 11:38:06 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/23 11:38:44 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2);
+int	ft_strlen(char *str);
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_strlen(char *str)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
+	int		length;
+
+	length = 0;
+	while (*(str++) != '\0')
 	{
-		s1++;
-		s2++;
+		length++;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
-}
-
-int	main(void)
-{
-	char *str1;
-	char *str2;
-
-	str1 = "Hello";
-	str2 = "Hellot";
-	printf("c  : %d\n", strcmp(str1, str2));
-	printf("ft : %d\n", ft_strcmp(str1, str2));
+	return (length);
 }

@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_iterative_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/21 12:49:13 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 15:37:02 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/24 12:24:43 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/24 13:16:48 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
-#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2);
+int	ft_iterative_power(int nb, int power);
 
-int	ft_strcmp(char *s1, char *s2)
+int	ft_iterative_power(int nb, int power)
 {
-	while (*s1 != '\0' && (*s1 == *s2))
+	int	i;
+
+	i = nb;
+	if (power < 0)
+		return (0);
+	else if (power == 0 && nb == 0)
+		return (1);
+	while (power > 1)
 	{
-		s1++;
-		s2++;
+		nb = nb * i;
+		power--;
 	}
-	return (*(unsigned char *)s1 - *(unsigned char *)s2);
+	return (nb);
 }
 
-int	main(void)
-{
-	char *str1;
-	char *str2;
-
-	str1 = "Hello";
-	str2 = "Hellot";
-	printf("c  : %d\n", strcmp(str1, str2));
-	printf("ft : %d\n", ft_strcmp(str1, str2));
-}
+// int main()
+// {
+//     printf("%d\n", ft_iterative_power(0, 0));
+// }

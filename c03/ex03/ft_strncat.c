@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/22 11:21:48 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/22 13:26:10 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/22 15:39:08 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,6 @@ char	*ft_strncat(char *dest, char *src, unsigned int nb)
 // 		dest2[index] = str_base[index];
 // 		index++;
 // 	}
-// 	printf("c  : %s$\n", strncat(dest, src, 4));
-// 	printf("ft : %s$\n", ft_strncat(dest2, src, 4));
+// 	printf("c  : %s$\n", strncat(dest, src, 3));
+// 	printf("ft : %s$\n", ft_strncat(dest2, src, 3));
 // }

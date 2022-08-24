@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 17:42:50 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/22 13:25:35 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/22 15:38:35 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_strcat(char *dest, char *src)
 // 	int		index;
 
 // 	str_base = "Hello";
-// 	src = " World";
+// 	src = "World";
 // 	index = 0;
 // 	while (index < 6)
 // 	{
