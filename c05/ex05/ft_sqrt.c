@@ -6,26 +6,28 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 16:21:15 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 17:52:33 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/24 18:17:07 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <unistd.h>
 
-int ft_sqrt(int nb)
+int	ft_sqrt(int nb)
 {
-    int c;
+	int	c;
 
-    c = 2;
-    while (c < nb)
-    {
-        if (c * c == nb)
-            return (c);
-    }
+	c = 2;
+	while (c < nb)
+	{
+		if (c * c == nb)
+			return (c);
+		c++;
+	}
+	return (0);
 }
 
 int main()
 {
-    printf("%d", ft_sqrt(4));
+    printf("%d", ft_sqrt(9));
 }

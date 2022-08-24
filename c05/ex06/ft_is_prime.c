@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_recursive_power.c                               :+:      :+:    :+:   */
+/*   ft_is_prime.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 12:33:04 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 18:00:15 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/24 17:59:18 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/24 18:43:23 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include <unistd.h>
 
-int	ft_recursive_power(int nb, int power);
+int	ft_is_prime(int nb);
 
-int	ft_recursive_power(int nb, int power)
+int	ft_is_prime(int nb)
 {
-	if (power > 0)
-		return (nb * ft_recursive_power(nb, (power - 1)));
-	else
-		return (1);
+	int	c;
+
+	c = 2;
+	while (c <= nb / 2)
+	{
+		if (nb % c == 0)
+			return (0);
+		c++;
+	}
+	return (1);
 }
 
-// int main()
-// {
-//     printf("%d\n", ft_recursive_power(2, 4));
-// }
+int main()
+{
+    printf("%d", ft_is_prime(2));
+	printf("%d", ft_is_prime(3));
+	printf("%d", ft_is_prime(4));
+	printf("%d", ft_is_prime(10));
+}

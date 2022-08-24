@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/23 11:44:06 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 11:06:01 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/24 18:58:49 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ int	ft_atoi(char *str)
 	return (res);
 }
 
-// int main ()
-// {
-// 	char a[40] = "---sa-d1556s65-d";
-// 	// int i = '0';
-// 	// printf("%d\n", i);
-// 	printf("%d\n", ft_atoi(a));
-// }
+int main ()
+{
+	char a[40] = "-sa-+-d15546546s65-d";
+	// int i = '0';
+	// printf("%d\n", i);
+	printf("%d\n", ft_atoi(a));
+}
