@@ -1,38 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   checknbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 10:55:44 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/25 15:40:11 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/27 13:43:16 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/28 21:31:28 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
-int	ft_iterative_factorial(int nb);
-
-int	ft_iterative_factorial(int nb)
+int	ft_checknbr(char *str)
 {
 	int	i;
 
-	i = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i > 1)
+	i = 0;
+	while (str[i] != '\0')
 	{
-		nb = nb * (i - 1);
-		i--;
+		if (!(str[i] >= '0' && str[i] <= '9'))
+			return (1);
+		i++;
 	}
-	return (nb);
+	return (0);
 }
-
-// int main()
-// {
-//     printf("%d\n", ft_iterative_factorial(0));
-// }

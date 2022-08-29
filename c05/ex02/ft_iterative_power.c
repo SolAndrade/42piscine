@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/24 12:24:43 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/24 13:16:48 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/26 11:46:24 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,17 @@ int	ft_iterative_power(int nb, int power)
 	i = nb;
 	if (power < 0)
 		return (0);
-	else if (power == 0 && nb == 0)
+	else if (power == 0)
 		return (1);
 	while (power > 1)
 	{
-		nb = nb * i;
+		i *= nb;
 		power--;
 	}
-	return (nb);
+	return (i);
 }
 
-// int main()
-// {
-//     printf("%d\n", ft_iterative_power(0, 0));
-// }
+int main()
+{
+    printf("%d\n", ft_iterative_power(3, 3));
+}

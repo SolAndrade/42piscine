@@ -1,40 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 17:59:18 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/26 11:34:36 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/27 13:57:06 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/28 21:36:43 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
-int	ft_is_prime(int nb);
+int		ft_checknbr(char *str);
+char	*ft_read_dict(char *file_name);
+void	ft_strstr(char *str, char *to_find);
+void	ft_printnbr(char *buf, char *to_print, int len);
+int		ft_strlen(char *str);
 
-int	ft_is_prime(int nb)
+int	main(int ac, char **av)
 {
-	int	c;
+	char	*buf;
+	int		len;
 
-	c = 2;
-	if (nb <= 1)
-		return (0);
-	while (c <= (nb / 2))
+	if (ac == 2)
 	{
-		if (!(nb % c))
-			return (0);
+		if (ft_checknbr(av[1]) == 0)
+		{
+			buf = ft_read_dict("numbers.dict");
+			len = ft_strlen(av[1]);
+			ft_printnbr(buf, av[1], len);
+		}
 		else
-			c += 1;
+			write(1, "Error", 5);
 	}
-	return (1);
-}
-
-int main()
-{
-    printf("%d\n", ft_is_prime(0));
-	printf("%d\n", ft_is_prime(1));
-	printf("%d\n", ft_is_prime(3));
-	printf("%d\n", ft_is_prime(5));
 }

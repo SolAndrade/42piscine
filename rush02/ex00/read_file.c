@@ -1,38 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   read_file.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 10:55:44 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/25 15:40:11 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/27 16:41:03 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/28 21:35:25 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <stdlib.h>
 
-int	ft_iterative_factorial(int nb);
-
-int	ft_iterative_factorial(int nb)
+char	*ft_read_dict(char *file_name)
 {
-	int	i;
+	char	*buf;
+	int		fd;
+	int		sz;
+	char	*path;
 
-	i = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i--;
-	}
-	return (nb);
+	path = file_name;
+	buf = (char *)malloc(691 * sizeof(char));
+	fd = open(path, O_RDONLY);
+	if (fd >= 0)
+		sz = read(fd, buf, 691);
+	return (buf);
 }
-
-// int main()
-// {
-//     printf("%d\n", ft_iterative_factorial(0));
-// }

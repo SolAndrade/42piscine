@@ -1,38 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 10:55:44 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/25 15:40:11 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/25 13:03:33 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/25 13:10:47 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
-int	ft_iterative_factorial(int nb);
-
-int	ft_iterative_factorial(int nb)
+int main(int argc, char **argv)
 {
-	int	i;
+    int i;
 
-	i = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i--;
-	}
-	return (nb);
+    i = 0;
+    if (argc == 2)
+    {
+        while (argv[1][i] != '\0')
+        {
+            if (argv[1][i] == 'a')
+            {
+                write(1, &argv[1][i], 1);
+                write(1, "\n", 1);
+                return (0);
+            }
+            i++;
+        }
+        write(1, "\n", 1);
+    }
+    else
+    {
+        write(1, "a", 1);
+        write(1, "\n", 1);
+    }
 }
-
-// int main()
-// {
-//     printf("%d\n", ft_iterative_factorial(0));
-// }

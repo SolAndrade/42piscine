@@ -1,38 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   strlen.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 10:55:44 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/25 15:40:11 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/27 16:44:42 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/28 21:37:14 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-
-int	ft_iterative_factorial(int nb);
-
-int	ft_iterative_factorial(int nb)
+int	ft_strlen(char *str)
 {
 	int	i;
 
-	i = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i--;
-	}
-	return (nb);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
-
-// int main()
-// {
-//     printf("%d\n", ft_iterative_factorial(0));
-// }

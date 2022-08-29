@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/24 10:55:44 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/25 15:40:11 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/25 16:15:18 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/25 16:28:05 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
 
-int	ft_iterative_factorial(int nb);
+char *ft_strrev(char *str);
 
-int	ft_iterative_factorial(int nb)
+char *ft_strrev(char *str)
 {
-	int	i;
+    int len;
+    int i;
+    char tmp;
 
-	i = nb;
-	if (nb < 0)
-		return (0);
-	if (nb == 0)
-		return (1);
-	while (i > 1)
-	{
-		nb = nb * (i - 1);
-		i--;
-	}
-	return (nb);
+    len = 0;
+    i = 0;
+    while(str[len] != '\0')
+    {
+        len++;
+    }
+    len--;
+    while (len > i)
+    {
+        tmp = str[i];
+        str[i] = str[len];
+        str[len] = tmp;
+        i++;
+        len--;
+    }
+    return (str);
 }
 
 // int main()
 // {
-//     printf("%d\n", ft_iterative_factorial(0));
+//     char *str = "abc";
+//     ft_strrev(str);
 // }
