@@ -1,30 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 16:41:03 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/29 17:07:56 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/29 10:48:47 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/29 11:44:54 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
-
-char	*ft_read_dict(char *file_name)
+int main(int ac, char **av)
 {
-	char	*buf;
-	int		fd;
-	int		sz;
-	char	*path;
-
-	path = file_name;
-	buf = (char *)malloc(691 * sizeof(char));
-	fd = open(path, O_RDONLY);
-	if (fd >= 0)
-		sz = read(fd, buf, 691);
-	return (buf);
+    
 }

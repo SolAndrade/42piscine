@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 16:41:03 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/29 17:07:56 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/29 12:29:29 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/30 12:09:00 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
 
-char	*ft_read_dict(char *file_name)
+int	main(int ac, char **av)
 {
-	char	*buf;
-	int		fd;
-	int		sz;
-	char	*path;
+	int	iav;
+	int	ichar;
 
-	path = file_name;
-	buf = (char *)malloc(691 * sizeof(char));
-	fd = open(path, O_RDONLY);
-	if (fd >= 0)
-		sz = read(fd, buf, 691);
-	return (buf);
+	ichar = 0;
+	iav = 1;
+	if (ac > 1)
+	{	
+		while (av[iav])
+		{
+			ichar = 0;
+			while (av[iav][ichar] != '\0')
+			{
+				write (1, &av[iav][ichar], 1);
+				ichar++;
+			}
+			write(1, "\n", 1);
+			iav++;
+		}
+	}
 }

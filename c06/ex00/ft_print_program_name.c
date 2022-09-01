@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_file.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/27 16:41:03 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/29 17:07:56 by soandrad         ###   ########.fr       */
+/*   Created: 2022/08/29 12:17:53 by soandrad          #+#    #+#             */
+/*   Updated: 2022/08/30 12:09:15 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <fcntl.h>
-#include <stdlib.h>
 
-char	*ft_read_dict(char *file_name)
+int	main(int ac, char **av)
 {
-	char	*buf;
-	int		fd;
-	int		sz;
-	char	*path;
+	int	i;
 
-	path = file_name;
-	buf = (char *)malloc(691 * sizeof(char));
-	fd = open(path, O_RDONLY);
-	if (fd >= 0)
-		sz = read(fd, buf, 691);
-	return (buf);
+	(void) ac;
+	i = 0;
+	while (av[0][i] != '\0')
+	{
+		write(1, &av[0][i], 1);
+		i++;
+	}
+	write(1, "\n", 1);
+	return (0);
 }

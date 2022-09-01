@@ -6,7 +6,7 @@
 /*   By: soandrad <soandrad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/27 18:45:20 by soandrad          #+#    #+#             */
-/*   Updated: 2022/08/28 21:42:01 by soandrad         ###   ########.fr       */
+/*   Updated: 2022/08/29 17:48:47 by soandrad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	ft_printnbr(char *buf, char *to_print, int len)
 			ft_rest_2(to_print, &i, &len, print);
 		if (len % 3 == 1)
 		{
+			//if (len > initlen - 3 || to_print[i] != '0')
 			if (len > initlen - 3 || to_print[i] != '0')
 				ft_rest_1(to_print, &i, &len, print);
 		}
